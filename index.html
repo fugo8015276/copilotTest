@@ -16,6 +16,20 @@
             padding: 10px 20px;
             font-size: 16px;
         }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+        }
     </style>
 </head>
 
@@ -25,14 +39,12 @@
     <p id="message"></p>
     <p id="datetime"></p>
 
-    <script>
-        document.getElementById('myButton').addEventListener('click', function () {
-            document.getElementById('message').textContent = 'ボタンがクリックされました！';
-            const now = new Date();
-            //${now.toLocaleString()}は、JavaScriptの変数をテンプレートリテラルとして表示する。
-            document.getElementById('datetime').textContent = `現在の日時: ${now.toLocaleString()}`;
-        });
-    </script>
+    <h2>ToDoリスト</h2>
+    <input type="text" id="newTask" placeholder="新しいタスクを入力">
+    <button id="addTaskButton">追加</button>
+    <ul id="taskList"></ul>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
