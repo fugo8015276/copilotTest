@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡単なWebページ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ようこそ！</h1>
+    <button id="myButton">クリックしてください</button>
+    <p id="message"></p>
+    <p id="datetime"></p>
+
+    <script>
+        document.getElementById('myButton').addEventListener('click', function () {
+            document.getElementById('message').textContent = 'ボタンがクリックされました！';
+            const now = new Date();
+            //${now.toLocaleString()}は、JavaScriptの変数をテンプレートリテラルとして表示する。
+            document.getElementById('datetime').textContent = `現在の日時: ${now.toLocaleString()}`;
+        });
+    </script>
+</body>
+
+</html>
