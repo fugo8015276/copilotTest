@@ -13,10 +13,21 @@ document.getElementById('addTaskButton').addEventListener('click', function () {
 
     const li = document.createElement('li');
     li.textContent = taskText;
+
+    // タスクを完了としてマークする機能
     li.addEventListener('click', function () {
-        // タスクがクリックされたときの処理。タスクに横線が引かれる
         li.classList.toggle('completed');
     });
+
+    // 削除ボタンを作成
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = '削除';
+    deleteButton.addEventListener('click', function () {
+        li.remove();
+    });
+
+    // タスクに削除ボタンを追加
+    li.appendChild(deleteButton);
 
     document.getElementById('taskList').appendChild(li);
     document.getElementById('newTask').value = '';
